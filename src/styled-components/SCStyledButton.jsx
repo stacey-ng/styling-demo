@@ -1,18 +1,17 @@
 import React, { useState } from "react";
-import { FilterFilled, EditFilled } from "@ant-design/icons";
 import { Button } from "./style";
 
-const StyledButton = ({
+const SCStyledButton = ({
   submit,
   children,
-  styleType,
+  theme,
   onClick,
   activatable,
+  primary,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
   const handleClick = (e) => {
-    console.log(e.target.className);
     onClick && onClick();
     activatable && setIsActive(!isActive);
   };
@@ -20,13 +19,14 @@ const StyledButton = ({
   return (
     <Button
       type={submit ? "submit" : "button"}
-      styleType={styleType}
+      theme={theme}
       isActive={isActive}
       onClick={handleClick}
+      primary={primary}
     >
       {children}
     </Button>
   );
 };
 
-export default StyledButton;
+export default SCStyledButton;

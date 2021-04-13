@@ -1,27 +1,46 @@
 import {useState} from 'react';
 import './App.css';
-import StyledButton from './components/StyledButton'
+import SCStyledButton from './styled-components/SCStyledButton';
+import SassStyledButton from './sass/SassStyledButton';
 import { FilterFilled, EditFilled } from '@ant-design/icons';
 function App() {
   
   return (
     <div className="App">
-      <StyledButton
-        submit
-        styleType="primary"
-        activatable
-      >
-        <FilterFilled/>
-        Filters
-      </StyledButton>
-      <StyledButton
-        styleType="secondary"
-        activatable
-      >
-        Manage Tasks
-        <EditFilled />
-      </ StyledButton>
-      <div>font size</div>
+      <div className="container">
+        <SCStyledButton
+          submit
+          activatable
+          primary
+        >
+          <FilterFilled/>
+          Filters
+        </SCStyledButton>
+        <SCStyledButton
+          theme="gray"
+          activatable
+        >
+          Manage Tasks
+          <EditFilled />
+        </ SCStyledButton>
+      </div>
+      <div className="container">
+        <SassStyledButton
+          submit
+          className="styled-button styled-button--primary"
+          activatable
+        >
+          <FilterFilled/>
+          Filters
+        </SassStyledButton>
+        <SassStyledButton
+          className="styled-button styled-button--secondary"
+          activatable
+        >
+          Manage Tasks
+          <EditFilled />
+        </ SassStyledButton>
+      </div>
     </div>
   );
 }

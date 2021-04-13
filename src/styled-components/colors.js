@@ -1,33 +1,5 @@
-// export const black = '#000';
-// export const white = '#fff';
-// export const offWhite = '#FEFEFE';
-// export const navy = '#002947';
-// export const blue = '#0065AE';
-
-// export const lightGrey = '#F5F5F6';
-// export const textGrey = '#595D60';
-// export const btnGrey = '#595D60';
-
-export const colors = {
-    primary5: '#0065ae',
-    black: '#000',
-    white: '#fff',
-    offWhite: '#FEFEFE',
-    navy: '#002947',
-    blue: '#0065AE',
-    lightGrey: '#F5F5F6',
-    textGrey: '#595D60',
-    btnGrey: '#595D60',
-    red1: '#FFECEB',
-    red2: '#FFA09D',
-    red3: '#FF544E',
-    red4: '#FF0800',
-    red5: '#BE0600',
-    red6: '#7C0400',
-    red7: '#3B0200',
-};
-
 export const primaryBlue = [
+    'filler',
     '#d5edff',
     '#a0cbeb',
     '#6ba9d7',
@@ -40,6 +12,7 @@ export const primaryBlue = [
 ];
 
 export const neutral = [
+    'filler',
     '#FEFEFE',
     '#F9FAFA',
     '#F5F5F6',
@@ -58,6 +31,7 @@ export const neutral = [
 ];
 
 export const red = [
+    'filler',
     '#FFECEB',
     '#FFA09D',
     '#FF544E',
@@ -68,6 +42,7 @@ export const red = [
 ];
 
 export const yellow = [
+    'filler',
     '#FFFCEB',
     '#FFEE9D',
     '#FFE14E',
@@ -78,6 +53,7 @@ export const yellow = [
 ];
 
 export const green = [
+    'filler',
     '#ECFAEC',
     '#A9D5A9',
     '#65B065',
@@ -88,6 +64,7 @@ export const green = [
 ];
 
 export const blue = [
+    'filler',
     '#E6F0FE', // 1
     '#9BC1F4', // 2
     '#5092EA', // 3
@@ -98,6 +75,7 @@ export const blue = [
 ];
 
 export const orange = [
+    'filler',
     '#FFEADB', // 1
     '#FFC39A', // 2
     '#FF9C58', // 3
