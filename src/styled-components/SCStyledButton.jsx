@@ -4,10 +4,11 @@ import { Button } from "./style";
 const SCStyledButton = ({
   submit,
   children,
-  theme,
   onClick,
   activatable,
+  styleType,
   primary,
+  theme,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -19,10 +20,11 @@ const SCStyledButton = ({
   return (
     <Button
       type={submit ? "submit" : "button"}
-      theme={theme}
       isActive={isActive}
       onClick={handleClick}
+      styleType={styleType}
       primary={primary}
+      theme={theme}
     >
       {children}
     </Button>
