@@ -2,8 +2,8 @@ import './App.css';
 import SCStyledButton from './styled-components/SCStyledButton';
 import SassStyledButton from './sass/SassStyledButton';
 import { FilterFilled, EditFilled } from '@ant-design/icons';
+
 function App() {
-  
   return (
     <div className="App">
       <div className="container v1">
@@ -46,13 +46,14 @@ function App() {
         <SCStyledButton
           submit
           activatable
+          theme="solidRed"
         >
           <FilterFilled/>
           Filters
         </SCStyledButton>
         <SCStyledButton
           activatable
-          theme="gray"
+          theme="invertedRed"
         >
           Manage Tasks
           <EditFilled />

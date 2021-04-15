@@ -16,6 +16,7 @@ const SCStyledButton = ({
     onClick && onClick();
     activatable && setIsActive(!isActive);
   };
+  console.log(children);
 
   return (
     <Button
