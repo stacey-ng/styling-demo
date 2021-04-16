@@ -1,6 +1,79 @@
 import styled, { css } from 'styled-components';
 import { primaryBlue, neutral, red } from '../styled-components/colors';
 
+export const Button = styled.button(({isActive, theme, round, iconPosition }) => { // https://styled-components.com/docs/basics#styling-any-component
+    const defaultTheme = {
+        text: neutral[1],
+        bg: isActive ? primaryBlue[7] : primaryBlue[5],
+        hoverText: neutral[1],
+        hoverBg: primaryBlue[7],
+        border: "none"
+    };
+
+    const otherThemes = { 
+        solidRed: {
+            bg: isActive ? red[7] : red[5],
+            hoverBg: red[7],
+        },
+        invertedBlue: {
+            text: isActive ? primaryBlue[5] : neutral[12],
+            bg: isActive ? primaryBlue[1] : neutral[5],
+            border: `1px solid ${isActive ? primaryBlue[5] : neutral[6]}`,
+            hoverText: isActive ? primaryBlue[5] : neutral[12],
+            hoverBg: isActive ? primaryBlue[3] : neutral[7]
+        },
+        invertedRed: {
+            text: isActive ? red[5] : neutral[12],
+            bg: isActive ? red[1] : neutral[5],
+            border: `1px solid ${isActive ? red[5] : neutral[6]}`,
+            hoverText: isActive ? red[5] : neutral[12],
+            hoverBg: isActive ? red[3] : neutral[7]
+        },
+        skeletonNeutral: {
+            text: isActive ? neutral[13] : neutral[11],
+            bg: neutral[1],
+            hoverText: neutral[13],
+            hoverBg: neutral[1]
+        },
+        skeletonRed: {
+            text: isActive ? red[7] : red[5],
+            bg: neutral[1],
+            hoverText: red[7],
+            hoverBg: neutral[1]
+        }
+    }
+    const { text, bg, border, hoverText, hoverBg } = Object.assign({}, defaultTheme, theme && otherThemes[theme]);
+
+    return css` // https://styled-components.com/docs/api#css
+        display: flex;
+        flex-direction: ${iconPosition === "top" || iconPosition === "bottom" ? "column" : "row"};
+        justify-content: center;
+        align-items: center;
+        padding: ${round ? 0 : "0.25rem 1rem"};
+
+        flex: none;
+        order: 2;
+        flex-grow: 0;
+        margin: 0 0.5rem;
+        border-radius: ${round ? "50%" : "5px"};
+
+        font-size: 1rem;
+
+        color: ${text};
+        background: ${bg};
+        border: ${border};
+
+        &:hover {
+            cursor: pointer;
+            color: ${hoverText};
+            background: ${hoverBg};
+        }
+    `
+});
+
+// ======================================
+// OLD VERSIONS
+
 // VERSION 1: STRING TRANSPLANTS
 // const inactiveStyleTypes = {
 //     primary: `
@@ -91,60 +164,3 @@ import { primaryBlue, neutral, red } from '../styled-components/colors';
 // The css`` TTL function below acts as the connector between the component's props
 // and primaryStyle & secondaryStyle.
 // ${({primary}) => primary ? primaryStyle : secondaryStyle}
-
-// ========================================
-
-// VERSION 3
-export const Button = styled.button(({isActive, theme}) => { // styled.button() same as styled.button``
-    const defaultTheme = {
-        text: neutral[1],
-        bg: isActive ? primaryBlue[7] : primaryBlue[5],
-        hover: primaryBlue[7],
-        border: "none"
-    };
-
-    const otherThemes = { 
-        solidRed: {
-            bg: isActive ? red[7] : red[5],
-            hover: red[7],
-        },
-        invertedBlue: {
-            text: isActive ? primaryBlue[5] : neutral[12],
-            bg: isActive ? primaryBlue[1] : neutral[5],
-            border: `1px solid ${isActive ? primaryBlue[5] : neutral[6]}`,
-            hover: isActive ? primaryBlue[3] : neutral[7]
-        },
-        invertedRed: {
-            text: isActive ? red[5] : neutral[12],
-            bg: isActive ? red[1] : neutral[5],
-            border: `1px solid ${isActive ? red[5] : neutral[6]}`,
-            hover: isActive ? red[3] : neutral[7]
-        }
-    }
-    const { text, bg, border, hover } = Object.assign({}, defaultTheme, theme && otherThemes[theme]);
-
-    
-    return css`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0.25rem 1rem;
-
-        flex: none;
-        order: 2;
-        flex-grow: 0;
-        margin: 0 0.5rem;
-        border-radius: 5px;
-
-        font-size: 1rem;
-
-        color: ${text};
-        background: ${bg};
-        border: ${border};
-
-        &:hover {
-            cursor: pointer;
-            background: ${hover};
-        }
-    `
-});
