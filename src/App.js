@@ -1,9 +1,10 @@
-import './App.css';
-import StyledButton from './styled-components/StyledButton';
+import "./App.css";
+import StyledButton from "./styled-components/StyledButton/StyledButton";
+import StyledIconButton from "./styled-components/StyledIconButton/StyledIconButton";
 
 // Common Props
 
-// children: array 
+// children: array
 //    Optional (see text & iconName).
 
 // onClick: function
@@ -16,12 +17,12 @@ import StyledButton from './styled-components/StyledButton';
 //    Color modifies the core stylings accordingly.
 //    Defaulted to solid + primaryBlue color when theme prop isn't provided
 
-// text: string, 
+// text: string,
 //    The text of a button saves 1 line of code if used by not needing </StyledButton>
 
 // iconName: string
-//    The name of the icon based on the icons imported into icons.js. 
-//    StyledButton sets this prop as its default for curIcon state to allow for 
+//    The name of the icon based on the icons imported into icons.js.
+//    StyledButton sets this prop as its default for curIcon state to allow for
 //    dynamic switching between Filled and Outline icon versions.
 //    Note: Icons in this repo uses only AntD icons because it has both outlined and filled
 //    versions of their icons. FontAwesome sells this as a premium option.
@@ -42,112 +43,36 @@ function App() {
       <div className="container solid">
         Solid
         <StyledButton
-          activatable
-          text="default"
-        />
-        <StyledButton
-          activatable
-          theme="solidRed"
-          iconName="AiFillEdit"
-          iconPosition="right"
-          text="solidRed"
-        />
-        <StyledButton
-          activatable
-          theme="solidBlue"
-          round
-          iconName="AiFillFilter"
-          iconPosition="center"
-        />
-        <StyledButton
-          activatable
-          theme="solidRed"
-          iconName="AiFillFilter"
-          iconPosition="left"
-          text="Filter"
-        />
-      </div>
-      <div className="container inverted">
-        Inverted
-        <StyledButton
-          activatable
-          theme="invertedBlue"
-          text="invertedBlue"
-        />
-        <StyledButton
-          activatable
-          theme="invertedRed"
-          iconName="AiFillEdit"
-          iconPosition="right"
-          text="invertedRed"
-        />
-        <StyledButton
-          activatable
-          theme="invertedBlue"
-          round
-          iconName="AiFillFilter"
-          iconPosition="center"
-        />
-        <StyledButton
-          activatable
-          theme="invertedRed"
-          iconName="AiFillFilter"
-          iconPosition="left"
-          text="Filter"
-        />
-      </div>
-      <div className="container skeleton">
-        Skeleton
-        <StyledButton
-          activatable
-          theme="skeletonNeutral"
-          text="skeletonNeutral"
-        />
-        <StyledButton
-          activatable
-          theme="skeletonRed"
-          text="skeletonRed"
-        />
-        <StyledButton
-          activatable
-          theme="skeletonNeutral"
-          round
-          iconName="AiFillFilter"
-          iconPosition="center"
-        />
-        <StyledButton
-          activatable
-          theme="skeletonNeutral"
-          iconName="AiFillFilter"
-          iconPosition="top"
-          text="Bulk Edit"
-        />
-        <StyledButton
-          activatable
-          theme="skeletonRed"
-          iconName="AiFillFilter"
-          iconPosition="bottom"
-          text="Bulk Filter"
-        />
-      </div>
-      {/* <div className="container">
-        SASS
-        <SassStyledButton
-          submit
-          className="styled-button styled-button--primary"
-          activatable
+          theme="solid"
+          color="red"
+          endIcon="AiFillFilter"
+          size="large"
         >
-          <FilterFilled/>
-          Filters
-        </SassStyledButton>
-        <SassStyledButton
-          className="styled-button styled-button--secondary"
+          Button
+        </StyledButton>
+        <StyledButton startIcon="AiFillFilter" size="small">
+          Button
+        </StyledButton>
+        <StyledButton theme="outlined" color="neutral" activatable size="small">
+          Button
+        </StyledButton>
+        <StyledButton
+          theme="outlined"
+          color="neutral"
           activatable
+          size="small"
+          disabled
         >
-          Manage Tasks
-          <EditFilled />
-        </ SassStyledButton>
-      </div> */}
+          Button
+        </StyledButton>
+      </div>
+      <div className="container solid">
+        <StyledIconButton
+          theme="inverted"
+          size="small"
+          icon="AiOutlineFilter"
+        ></StyledIconButton>
+      </div>
     </div>
   );
 }
