@@ -278,45 +278,45 @@ function App() {
           />
         </div>
 
-        <div className="container minimal icons">
-          <h1>Icons - Minimal (Matches Button Minimal)</h1>
+        <div className="container filled icons">
+          <h1>Icons - Filled (Matches Button Minimal)</h1>
           <StyledIconButton
-            variant="minimal"
+            variant="filled"
             color="blue"
             icon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal"
+            variant="filled"
             color="neutral"
             icon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal"
+            variant="filled"
             color="red"
             icon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal"
+            variant="filled"
             color="orange"
             icon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal"
+            variant="filled"
             color="yellow"
             icon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal"
+            variant="filled"
             color="green"
             icon="AiFillFilter"
             size="large"
@@ -325,52 +325,52 @@ function App() {
         </div>
 
         <div className="container minimal2 icons">
-          <h1>Icons - Minimal (Current Implementation, Table Filters)</h1>
+          <h1>Icons - Unfilled (Current Implementation, Table Filters)</h1>
           <StyledIconButton
-            variant="minimal2"
+            variant="unfilled"
             color="blue"
             icon="AiOutlineFilter"
-            hoverIcon="AiFillFilter"
+            activeIcon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal2"
+            variant="unfilled"
             color="neutral"
             icon="AiOutlineFilter"
-            hoverIcon="AiFillFilter"
+            activeIcon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal2"
+            variant="unfilled"
             color="red"
             icon="AiOutlineFilter"
-            hoverIcon="AiFillFilter"
+            activeIcon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal2"
+            variant="unfilled"
             color="orange"
             icon="AiOutlineFilter"
-            hoverIcon="AiFillFilter"
+            activeIcon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal2"
+            variant="unfilled"
             color="yellow"
             icon="AiOutlineFilter"
-            hoverIcon="AiFillFilter"
+            activeIcon="AiFillFilter"
             size="large"
             activatable
           />
           <StyledIconButton
-            variant="minimal2"
+            variant="unfilled"
             color="green"
             icon="AiOutlineFilter"
-            hoverIcon="AiFillFilter"
+            activeIcon="AiFillFilter"
             size="large"
             activatable
           />
@@ -387,7 +387,7 @@ function App() {
             disabled
           />
           <StyledIconButton
-            variant="minimal"
+            variant="filled"
             color="blue"
             icon="AiFillFilter"
             size="large"
@@ -395,7 +395,7 @@ function App() {
             disabled
           />
           <StyledIconButton
-            variant="minimal2"
+            variant="unfilled"
             color="blue"
             icon="AiOutlineFilter"
             size="large"

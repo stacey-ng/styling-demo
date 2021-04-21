@@ -4,57 +4,88 @@ import { colors, defaultIndex } from "../colors";
 export const Button = styled.button(({ variant, color, isActive, size }) => {
   // https://styled-components.com/docs/basics#styling-any-component\
   const { neutral } = colors;
+  const buttonColor = colors[color];
+  const colorIndex = defaultIndex[color];
 
   // CSS properties: text color, background color, hover text color, hover background, border
-  // Default theme as guardrail in case developer does not provide sufficient props
+  // Default theme as guardrail in case developer does not provide sufficient props?
   // Currently there are only 2 'themes' of implementation of these icon buttons. Should we only create themes for available instances?
-  const variants = {
-    outlined: {
-      text: isActive ? colors[color][defaultIndex[color]] : neutral[12],
-      bg: isActive ? colors[color][defaultIndex[color] - 4] : neutral[5],
-      border: "none",
+  const createOutlineStyle = () => {
+    let outlineStyle = {
+      text: neutral[12],
+      bg: neutral[5],
       borderRadius: "50%",
-      hoverText: colors[color][defaultIndex[color]],
-      hoverBg: isActive
-        ? colors[color][defaultIndex[color] - 2]
-        : colors[color][defaultIndex[color] - 4],
+
+      hoverText: buttonColor[colorIndex],
+      hoverBg: buttonColor[colorIndex - 4],
+
       disabledText: neutral[9],
       disabledBg: neutral[3],
-    },
-    minimal: {
-      text: colors[color][defaultIndex[color]],
+    };
+
+    if (isActive) {
+      outlineStyle.text = buttonColor[colorIndex];
+      outlineStyle.bg = buttonColor[colorIndex - 4];
+      outlineStyle.hoverBg = buttonColor[colorIndex - 2];
+    }
+
+    return outlineStyle;
+  };
+
+  const createFilledStyle = () => {
+    let filledStyle = {
+      text: buttonColor[colorIndex],
       bg: "none",
-      border: "none",
       borderRadius: "5px",
-      hoverText: colors[color][defaultIndex[color] + 2],
+
+      hoverText: buttonColor[colorIndex + 2],
       hoverBg: neutral[3],
-      disabledText: colors[color][defaultIndex[color] - 2],
+
+      disabledText: neutral[7],
       disabledBg: "none",
-    },
-    minimal2: {
-      text: colors[color][defaultIndex[color]],
+    };
+
+    if (isActive) {
+      filledStyle.bg = neutral[3];
+    }
+
+    return filledStyle;
+  };
+
+  const createUnfilledStyle = () => {
+    let unfilledStyle = {
+      text: buttonColor[colorIndex],
       bg: "none",
-      border: "none",
-      borderRadius: "5pxAi",
-      hoverText: colors[color][defaultIndex[color]],
+      borderRadius: "5px",
+
+      hoverText: buttonColor[colorIndex],
       hoverBg: "none",
-      disabledText: colors[color][defaultIndex[color] - 2],
+
+      disabledText: neutral[7],
       disabledBg: "none",
-    },
+    };
+
+    return unfilledStyle;
+  };
+
+  const stylingFunctions = {
+    outlined: createOutlineStyle,
+    filled: createFilledStyle,
+    unfilled: createUnfilledStyle,
   };
 
   // Should height be another layer of the themes object?
   const height = {
     small: {
-      container: "32px",
+      lineHeight: "32px",
       font: "14px",
     },
     medium: {
-      container: "36px",
+      lineHeight: "36px",
       font: "16px",
     },
     large: {
-      container: "40px",
+      lineHeight: "40px",
       font: "20px",
     },
   };
@@ -62,21 +93,20 @@ export const Button = styled.button(({ variant, color, isActive, size }) => {
   const {
     text,
     bg,
-    border,
     borderRadius,
     hoverText,
     hoverBg,
     disabledText,
     disabledBg,
-  } = variants[variant];
+  } = stylingFunctions[variant]();
 
   // console.log("style-->", text, bg, border, hoverText, hoverBg, height);
   // console.log("color-->", theme, themes[theme][color]);
 
   return css`
     display: flex;
-    height: ${size ? height[size].container : "32px"};
-    width: ${size ? height[size].container : "32px"};
+    line-height: ${size ? height[size].lineHeight : "32px"};
+    width: ${size ? height[size].lineHeight : "32px"};
     justify-content: center;
     align-items: center;
     padding: 0.5em;
@@ -84,7 +114,6 @@ export const Button = styled.button(({ variant, color, isActive, size }) => {
 
     color: ${text};
     background: ${bg};
-    border: ${border};
     border-radius: ${borderRadius};
 
     font-size: ${size ? height[size].font : "14px"};

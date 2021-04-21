@@ -80,15 +80,15 @@ export const Button = styled.button(
 
     const height = {
       small: {
-        container: "32px",
+        lineHeight: "32px",
         font: "14px",
       },
       medium: {
-        container: "36px",
+        lineHeight: "36px",
         font: "16px",
       },
       large: {
-        container: "40px",
+        lineHeight: "40px",
         font: "20px",
       },
     };
@@ -105,7 +105,7 @@ export const Button = styled.button(
 
     return css`
     display: flex;
-    height: ${size ? height[size].container : "32px"};
+    line-height: ${size ? height[size].lineHeight : "32px"};
     justify-content: center;
     align-items: center;
     padding: 0.25rem 1rem;

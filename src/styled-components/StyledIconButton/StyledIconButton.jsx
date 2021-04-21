@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import styled, { css } from "styled-components";
+import React, { useEffect, useState } from "react";
 import { Button } from "./style";
 import { icons } from "../icons";
 
@@ -12,8 +11,8 @@ const StyledButton = ({
   type,
   size,
   icon,
-  // Better practice to delineate hover/active/fill icon
-  hoverIcon,
+  // Better practice to delineate hover/active/fill icon?
+  activeIcon,
   onClick,
 }) => {
   const [currIcon, setCurrIcon] = useState(icon);
@@ -25,6 +24,10 @@ const StyledButton = ({
     activatable && setIsActive(!isActive);
   };
 
+  useEffect(() => {
+    activeIcon && isActive ? setCurrIcon(activeIcon) : setCurrIcon(icon);
+  }, [isActive, icon, activeIcon]);
+
   return (
     <Button
       variant={variant}
@@ -34,8 +37,12 @@ const StyledButton = ({
       type={type}
       isActive={isActive}
       onClick={handleClick}
-      onMouseEnter={() => hoverIcon && setCurrIcon(hoverIcon)}
-      onMouseLeave={() => hoverIcon && setCurrIcon(icon)}
+      onMouseEnter={(e) => {
+        activeIcon && setCurrIcon(activeIcon);
+      }}
+      onMouseLeave={(e) => {
+        activeIcon && !isActive && setCurrIcon(icon);
+      }}
     >
       {icons[currIcon]}
     </Button>

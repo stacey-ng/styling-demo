@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled, { css } from "styled-components";
 import { Button } from "./style";
 import { icons } from "../icons";
 
