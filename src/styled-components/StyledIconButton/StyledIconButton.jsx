@@ -12,7 +12,7 @@ const StyledButton = ({
   type,
   size,
   icon,
-  // Better practice to delineate hover icon?
+  // Better practice to delineate hover/active/fill icon
   hoverIcon,
   onClick,
 }) => {

@@ -13,6 +13,7 @@ function App() {
             color="blue"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -21,6 +22,7 @@ function App() {
             color="neutral"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -29,6 +31,7 @@ function App() {
             color="red"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -37,6 +40,7 @@ function App() {
             color="orange"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -45,6 +49,7 @@ function App() {
             color="yellow"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -53,13 +58,10 @@ function App() {
             color="green"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
-        </div>
-
-        <div className="container contained disabled">
-          <h2>Contained - Disabled</h2>
           <StyledButton
             variant="contained"
             color="blue"
@@ -67,52 +69,7 @@ function App() {
             size="large"
             disabled
           >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="contained"
-            color="neutral"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="contained"
-            color="red"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="contained"
-            color="orange"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="contained"
-            color="yellow"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="contained"
-            color="green"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
+            Disabled
           </StyledButton>
         </div>
 
@@ -172,10 +129,6 @@ function App() {
           >
             Button
           </StyledButton>
-        </div>
-
-        <div className="container outlined">
-          <h1>Outlined Disabled</h1>
           <StyledButton
             variant="outlined"
             color="blue"
@@ -184,57 +137,7 @@ function App() {
             activatable
             disabled
           >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="outlined"
-            color="neutral"
-            endIcon="AiFillFilter"
-            size="large"
-            activatable
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="outlined"
-            color="red"
-            endIcon="AiFillFilter"
-            size="large"
-            activatable
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="outlined"
-            color="orange"
-            endIcon="AiFillFilter"
-            size="large"
-            activatable
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="outlined"
-            color="yellow"
-            endIcon="AiFillFilter"
-            size="large"
-            activatable
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="outlined"
-            color="green"
-            endIcon="AiFillFilter"
-            size="large"
-            activatable
-            disabled
-          >
-            Button
+            Disabled
           </StyledButton>
         </div>
 
@@ -245,6 +148,7 @@ function App() {
             color="blue"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -253,6 +157,7 @@ function App() {
             color="neutral"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -261,6 +166,7 @@ function App() {
             color="red"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -269,6 +175,7 @@ function App() {
             color="orange"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -277,6 +184,7 @@ function App() {
             color="yellow"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
@@ -285,13 +193,10 @@ function App() {
             color="green"
             endIcon="AiFillFilter"
             size="large"
+            activatable
           >
             Button
           </StyledButton>
-        </div>
-
-        <div className="container minimal">
-          <h1>Minimal Disabled</h1>
           <StyledButton
             variant="minimal"
             color="blue"
@@ -299,79 +204,7 @@ function App() {
             size="large"
             disabled
           >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="minimal"
-            color="neutral"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="minimal"
-            color="red"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="minimal"
-            color="orange"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="minimal"
-            color="yellow"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="minimal"
-            color="green"
-            endIcon="AiFillFilter"
-            size="large"
-            disabled
-          >
-            Button
-          </StyledButton>
-        </div>
-        <div className="container sizes">
-          <h1>Sizes</h1>
-          <StyledButton
-            variant="contained"
-            color="blue"
-            endIcon="AiFillFilter"
-            size="small"
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="contained"
-            color="blue"
-            endIcon="AiFillFilter"
-            size="medium"
-          >
-            Button
-          </StyledButton>
-          <StyledButton
-            variant="contained"
-            color="blue"
-            endIcon="AiFillFilter"
-            size="large"
-          >
-            Button
+            Disabled
           </StyledButton>
         </div>
 
