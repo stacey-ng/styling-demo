@@ -4,31 +4,41 @@ import { Button } from "./style";
 import { icons } from "../icons";
 
 const StyledButton = ({
-  // see App.js for prop descriptions
-  children,
-  // Themes: inverted (round with background, blue on hover) and borderless
-  theme,
+  // Variants: outlined, minimal
+  variant,
+  color,
   disabled,
+  activatable,
   type,
   size,
-  // How to indicate what's the filled version of this icon?
   icon,
+  // Better practice to delineate hover icon?
+  hoverIcon,
   onClick,
 }) => {
+  const [currIcon, setCurrIcon] = useState(icon);
+  const [isActive, setIsActive] = useState(false);
+
   const handleClick = (e) => {
     // Bundles the custom click effect with generic click effect
     onClick && onClick(e);
+    activatable && setIsActive(!isActive);
   };
 
   return (
     <Button
-      theme={theme}
+      variant={variant}
+      color={color}
       size={size}
       disabled={disabled}
       type={type}
+      isActive={isActive}
       onClick={handleClick}
-      icon={icon}
-    />
+      onMouseEnter={() => hoverIcon && setCurrIcon(hoverIcon)}
+      onMouseLeave={() => hoverIcon && setCurrIcon(icon)}
+    >
+      {icons[currIcon]}
+    </Button>
   );
 };
 

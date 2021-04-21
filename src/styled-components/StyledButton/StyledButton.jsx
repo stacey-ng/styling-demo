@@ -6,7 +6,7 @@ import { icons } from "../icons";
 const StyledButton = ({
   // see App.js for prop descriptions
   children,
-  theme,
+  variant,
   color,
   activatable,
   disabled,
@@ -27,7 +27,7 @@ const StyledButton = ({
 
   return (
     <Button
-      theme={theme}
+      variant={variant}
       color={color}
       isActive={isActive}
       size={size}

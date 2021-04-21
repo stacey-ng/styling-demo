@@ -2,76 +2,598 @@ import "./App.css";
 import StyledButton from "./styled-components/StyledButton/StyledButton";
 import StyledIconButton from "./styled-components/StyledIconButton/StyledIconButton";
 
-// Common Props
-
-// children: array
-//    Optional (see text & iconName).
-
-// onClick: function
-//    The clickHandler function passed down to StyledButton.
-
-// theme: string
-//    determines 3 core stylings (“solid”, “inverted”, “skeleton/borderless”)
-//    These core stylings can be modified by adding a color to the theme string (solidColor).
-//    i.e. solidRed, invertedRed, skeletonRed
-//    Color modifies the core stylings accordingly.
-//    Defaulted to solid + primaryBlue color when theme prop isn't provided
-
-// text: string,
-//    The text of a button saves 1 line of code if used by not needing </StyledButton>
-
-// iconName: string
-//    The name of the icon based on the icons imported into icons.js.
-//    StyledButton sets this prop as its default for curIcon state to allow for
-//    dynamic switching between Filled and Outline icon versions.
-//    Note: Icons in this repo uses only AntD icons because it has both outlined and filled
-//    versions of their icons. FontAwesome sells this as a premium option.
-
-// iconPosition: string, one of ["top", "right", "bottom", "left", "center"]
-//    Determines where the icon appears relative to a button's text.
-//    "center" is used when no text is wanted on a button
-
-// Uncommon Props
-
-// activatable: boolean, allows user to toggle “active” state
-// round: boolean, changes border-radius & padding to look round
-// submit: boolean, determines the type of button it is, "submit" & "button"
-
 function App() {
   return (
     <div className="App">
-      <div className="container solid">
-        Solid
-        <StyledButton
-          theme="solid"
-          color="red"
-          endIcon="AiFillFilter"
-          size="large"
-        >
-          Button
-        </StyledButton>
-        <StyledButton startIcon="AiFillFilter" size="small">
-          Button
-        </StyledButton>
-        <StyledButton theme="outlined" color="neutral" activatable size="small">
-          Button
-        </StyledButton>
-        <StyledButton
-          theme="outlined"
-          color="neutral"
-          activatable
-          size="small"
-          disabled
-        >
-          Button
-        </StyledButton>
+      <div className="rows">
+        <div className="container solid">
+          <h1>Contained</h1>
+          <StyledButton
+            variant="contained"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="neutral"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="red"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="orange"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="yellow"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="green"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+        </div>
+
+        <div className="container contained disabled">
+          <h2>Contained - Disabled</h2>
+          <StyledButton
+            variant="contained"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="neutral"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="red"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="orange"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="yellow"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="green"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+        </div>
+
+        <div className="container outlined">
+          <h1>Outlined</h1>
+          <StyledButton
+            variant="outlined"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="neutral"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="red"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="orange"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="yellow"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="green"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+          >
+            Button
+          </StyledButton>
+        </div>
+
+        <div className="container outlined">
+          <h1>Outlined Disabled</h1>
+          <StyledButton
+            variant="outlined"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="neutral"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="red"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="orange"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="yellow"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="outlined"
+            color="green"
+            endIcon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          >
+            Button
+          </StyledButton>
+        </div>
+
+        <div className="container minimal">
+          <h1>Minimal</h1>
+          <StyledButton
+            variant="minimal"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="neutral"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="red"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="orange"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="yellow"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="green"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+        </div>
+
+        <div className="container minimal">
+          <h1>Minimal Disabled</h1>
+          <StyledButton
+            variant="minimal"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="neutral"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="red"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="orange"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="yellow"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="minimal"
+            color="green"
+            endIcon="AiFillFilter"
+            size="large"
+            disabled
+          >
+            Button
+          </StyledButton>
+        </div>
+        <div className="container sizes">
+          <h1>Sizes</h1>
+          <StyledButton
+            variant="contained"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="small"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="medium"
+          >
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+        </div>
+
+        <div className="container content">
+          <h1>Content Orientation</h1>
+          <StyledButton
+            variant="contained"
+            color="blue"
+            startIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+          <StyledButton variant="contained" color="blue" size="large">
+            Button
+          </StyledButton>
+          <StyledButton
+            variant="contained"
+            color="blue"
+            endIcon="AiFillFilter"
+            size="large"
+          >
+            Button
+          </StyledButton>
+        </div>
       </div>
-      <div className="container solid">
-        <StyledIconButton
-          theme="inverted"
-          size="small"
-          icon="AiOutlineFilter"
-        ></StyledIconButton>
+      <div className="rows">
+        <div className="container outlined icons">
+          <h1>Icons - Outlined</h1>
+          <StyledIconButton
+            variant="outlined"
+            color="blue"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="outlined"
+            color="neutral"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="outlined"
+            color="red"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="outlined"
+            color="orange"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="outlined"
+            color="yellow"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="outlined"
+            color="green"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+        </div>
+
+        <div className="container minimal icons">
+          <h1>Icons - Minimal (Matches Button Minimal)</h1>
+          <StyledIconButton
+            variant="minimal"
+            color="blue"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal"
+            color="neutral"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal"
+            color="red"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal"
+            color="orange"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal"
+            color="yellow"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal"
+            color="green"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+        </div>
+
+        <div className="container minimal2 icons">
+          <h1>Icons - Minimal (Current Implementation, Table Filters)</h1>
+          <StyledIconButton
+            variant="minimal2"
+            color="blue"
+            icon="AiOutlineFilter"
+            hoverIcon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal2"
+            color="neutral"
+            icon="AiOutlineFilter"
+            hoverIcon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal2"
+            color="red"
+            icon="AiOutlineFilter"
+            hoverIcon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal2"
+            color="orange"
+            icon="AiOutlineFilter"
+            hoverIcon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal2"
+            color="yellow"
+            icon="AiOutlineFilter"
+            hoverIcon="AiFillFilter"
+            size="large"
+            activatable
+          />
+          <StyledIconButton
+            variant="minimal2"
+            color="green"
+            icon="AiOutlineFilter"
+            hoverIcon="AiFillFilter"
+            size="large"
+            activatable
+          />
+        </div>
+
+        <div className="container icons">
+          <h1>Icons - Disabled</h1>
+          <StyledIconButton
+            variant="outlined"
+            color="blue"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          />
+          <StyledIconButton
+            variant="minimal"
+            color="blue"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+            disabled
+          />
+          <StyledIconButton
+            variant="minimal2"
+            color="blue"
+            icon="AiOutlineFilter"
+            size="large"
+            disabled
+          />
+        </div>
+
+        <div className="container icons">
+          <h1>Icons - Sizes</h1>
+          <StyledIconButton
+            variant="outlined"
+            color="blue"
+            icon="AiFillFilter"
+            size="small"
+            activatable
+          />{" "}
+          <StyledIconButton
+            variant="outlined"
+            color="blue"
+            icon="AiFillFilter"
+            size="medium"
+            activatable
+          />{" "}
+          <StyledIconButton
+            variant="outlined"
+            color="blue"
+            icon="AiFillFilter"
+            size="large"
+            activatable
+          />
+        </div>
       </div>
     </div>
   );
