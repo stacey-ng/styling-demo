@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "./style";
 import { icons } from "../icons";
 
-const StyledButton = ({
+const StyledIconButton = ({
   // Variants: outlined, minimal
   variant,
   color,
@@ -49,4 +49,4 @@ const StyledButton = ({
   );
 };
 
-export default StyledButton;
+export default StyledIconButton;

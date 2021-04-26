@@ -1,11 +1,28 @@
 import "./App.css";
 import StyledButton from "./styled-components/StyledButton/StyledButton";
 import StyledIconButton from "./styled-components/StyledIconButton/StyledIconButton";
+import StyledInput from "./styled-components/StyledInput/StyledInput";
 
 function App() {
   return (
     <div className="App">
       <div className="rows">
+        <div className="container inputs">
+          <h1>Inputs</h1>
+          <StyledInput></StyledInput>
+          <StyledInput defaultValue="Default Value"></StyledInput>
+          <StyledInput placeholder="Required" required></StyledInput>
+          <StyledInput placeholder="Error" error></StyledInput>
+          <StyledInput placeholder="Disabled" disabled></StyledInput>
+          <StyledInput placeholder="Placeholder Value" allowClear></StyledInput>
+          <StyledInput placeholder="Disabled" disabled allowClear></StyledInput>
+          <StyledInput placeholder="Error" error allowClear></StyledInput>
+          <StyledInput defaultValue="Default Value" size="small"></StyledInput>
+          <StyledInput defaultValue="Default Value" size="medium"></StyledInput>
+          <StyledInput defaultValue="Default Value" size="large"></StyledInput>
+        </div>
+      </div>
+      {/* <div className="rows">
         <div className="container solid">
           <h1>Contained</h1>
           <StyledButton
@@ -427,7 +444,7 @@ function App() {
             activatable
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

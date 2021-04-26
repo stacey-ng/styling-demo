@@ -12,7 +12,7 @@ export const Button = styled.button(({ variant, color, isActive, size }) => {
   // Currently there are only 2 'themes' of implementation of these icon buttons. Should we only create themes for available instances?
   const createOutlineStyle = () => {
     let outlineStyle = {
-      text: neutral[12],
+      text: neutral[11],
       bg: neutral[5],
       borderRadius: "50%",
 
@@ -39,7 +39,7 @@ export const Button = styled.button(({ variant, color, isActive, size }) => {
       borderRadius: "5px",
 
       hoverText: buttonColor[colorIndex + 2],
-      hoverBg: neutral[3],
+      // hoverBg: neutral[3],
 
       disabledText: neutral[7],
       disabledBg: "none",
