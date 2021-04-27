@@ -40,6 +40,7 @@ const StyledInput = ({
           variant="filled"
           color="neutral"
           icon="AiFillCloseCircle"
+          disabled={disabled}
           onClick={handleClear}
         />
       )}

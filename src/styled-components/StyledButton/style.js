@@ -114,6 +114,7 @@ export const Button = styled.button(
     background: ${bg};
     border: ${border};
     border-radius: 5px;
+    outline: none;
 
     font-size: ${size ? height[size].font : "14px"};
 
@@ -130,7 +131,7 @@ export const Button = styled.button(
     }
 
     .icon {
-        vertical-align: middle;        
+        display: flex;        
         ${startIcon && "padding-right: 0.5em;"}
         ${endIcon && "padding-left: 0.5em;"}
   `;
